@@ -1,6 +1,6 @@
 var request = require('request');
-const apiKey = process.env.apiKey;
-const zipCodeURL = 'https:/mwa.zipcodeapi.com/rest/';
+const apiKey = process.env.KEY;
+const zipCodeURL = 'http://www.zipcodeapi.com/rest/';
 
 var distance = {
   find: function (req, res, next) {
@@ -8,10 +8,11 @@ var distance = {
       zipCodeURL +
         apiKey +
         '/distance.json/' +
-        req.params.zipcode1 +
+        req.query.zipcode1 +
         '/' +
-        req.params.zipcode2 +
-        '/mile',
+        req.query.zipcode2 +
+        '/' +
+        req.query.unit,
       function (err, response, body) {
         if (!err && response.statusCode == 200) {
           response = JSON.parse(body);
