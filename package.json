@@ -1,10 +1,11 @@
 {
   "name": "distancemicroservicenode1",
   "version": "1.0.0",
-  "description": "First node microservice project",
+  "description": "First node microservice project to cakculate US distances from zipcodes",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server",
+    "dev": "nodemon server"
   },
   "author": "xpan",
   "license": "ISC",
